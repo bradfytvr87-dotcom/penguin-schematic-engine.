@@ -1,0 +1,41 @@
+plugins {
+    // Minecraft 26.x is unobfuscated: new Loom plugin id, no mappings, plain "implementation".
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
+    id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base { archivesName = project.archives_base_name }
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+    testImplementation "org.junit.jupiter:junit-jupiter:5.11.4"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") { expand "version": project.version }
+}
+
+java {
+    // Minecraft 26.x needs Java 25.
+    toolchain { languageVersion = JavaLanguageVersion.of(25) }
+    withSourcesJar()
+}
+
+test { useJUnitPlatform() }
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 25
+    it.options.encoding = "UTF-8"
+}

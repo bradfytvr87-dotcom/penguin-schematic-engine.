@@ -1,0 +1,13 @@
+{
+  "key.category.penguin_schematic_engine.main": "Penguin Schematic Engine",
+  "key.penguin_schematic_engine.load": "Load next schematic",
+  "key.penguin_schematic_engine.anchor": "Set anchor at looked-at block",
+  "key.penguin_schematic_engine.hud": "Toggle HUD",
+  "key.penguin_schematic_engine.hologram": "Toggle hologram",
+  "key.penguin_schematic_engine.layer": "Toggle current-layer-only view",
+  "key.penguin_schematic_engine.rotate": "Rotate 90 degrees",
+  "key.penguin_schematic_engine.mirror_x": "Mirror X",
+  "key.penguin_schematic_engine.mirror_z": "Mirror Z",
+  "key.penguin_schematic_engine.skip": "Skip current block",
+  "key.penguin_schematic_engine.verify": "Re-verify all blocks now"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "penguin_schematic_engine",
+  "version": "${version}",
+  "name": "Penguin Schematic Engine",
+  "description": "A auto schematic builder by PenguinVexx",
+  "authors": ["PenguinVexx"],
+  "license": "All-Rights-Reserved",
+  "icon": "assets/penguin_schematic_engine/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.penguin.client.PenguinClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
